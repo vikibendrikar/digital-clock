@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="clock"></div>
+ <button id="btn">click</button>
+</body>
+<script>
+    let btn=document.getElementById('btn');
+    btn.addEventListener('click',mnb);
+    function mnb(){
+    function showTime(){
+let date=new Date();
+console.log(date);
+let h=date.getHours();
+let m=date.getMinutes();
+let s=date.getSeconds();
+if(h==0){
+    h=12;
+}
+if(h>12){
+    h=h-12;
+    session="PM";
+}
+h=(h<10)?"0"+h:h;
+m=(m<10)?"0"+m:m;
+s=(s<10)?"0"+s:s;
+
+document.getElementById('clock').innerHTML=h+":"+m+":"+ s+":"+session;
+setTimeout(showTime,1000);
+
+
+    }
+    showTime();
+    }
+</script>
+ 
+</script>
+</html>
